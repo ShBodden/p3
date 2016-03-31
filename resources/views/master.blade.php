@@ -16,20 +16,9 @@
       </h1>
 
 <section>
-<h2>
-Welcome to Developer's Best Friend!
-
-</h2>
-
-  Use this site to generate fake data to help with things such as website layouts<br>
-  It includes two tools: One to help you generate Lorem Ipsum text and another to generate user profiles.
-
-
-    <pre><a href="/paragraph">Lorem Ipsum</a>   <a href="/users">User profile generator</a>
-
-    </pre>
-
+@yield('content')
 </section>
+
     </body>
 
 </html>

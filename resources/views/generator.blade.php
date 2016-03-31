@@ -1,22 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Show Book</title>
-    <meta charset='utf-8'>
+@extends('master')
 
-</head>
-<body>
+@section('title')
+    Lorem Ipsum
+@stop
 
-    <header>
-      <form method='POST' action='/paragraph'>
+
+
+
+@section('content')
+<h2>
+Please select the number of paragraphs you wish to have generated. Enjoy!
+</h2>
+  <form method='POST' action='/paragraph'>
   {{ csrf_field() }}
   <input type='text' name='paragraphs'>
   <input type='submit' value='Submit'>
-</form>
-    </header>
+  </form>
+
+  <ul class= 'errors'>
+    @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+    @endforeach
+</ul>
+
+<br>
 
 
-
-
-</body>
-</html>
+<div>
+  @foreach ($paragraphs as $value)
+{{$value}}<br><br>
+@endforeach
+</div>
+@stop
